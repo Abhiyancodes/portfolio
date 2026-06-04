@@ -31,7 +31,7 @@ const skillsContent = document.getElementsByClassName("skills__content"),
 function toggleSkills() {
   let itemClass = this.parentNode.className;
 
-  for (i = 0; i < skillsContent.length; i++) {
+  for (let i = 0; i < skillsContent.length; i++) {
     skillsContent[i].className = "skills__content skills__close";
   }
   if (itemClass === "skills__content skills__close") {
@@ -72,10 +72,20 @@ var swiper = new Swiper(".portfolio__container", {
   cssMode: true,
   loop: true,
 
+  speed: 600,
+  spaceBetween: 30,
+  centeredSlides: true,
+
+  mousewheel: true,
+  keyboard: {
+    enabled: true,
+  },
+
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -91,7 +101,7 @@ function scrollActive() {
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 50;
-    sectionId = current.getAttribute("id");
+    const sectionId = current.getAttribute("id");
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       document
@@ -159,3 +169,39 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+/*==================== CONTACT FORM ====================*/
+const contactForm = document.getElementById("contact-form");
+const successMessage = document.getElementById("success-message");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+
+    try {
+      const response = await fetch(contactForm.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        successMessage.classList.add("show");
+
+        contactForm.reset();
+
+        setTimeout(() => {
+          successMessage.classList.remove("show");
+        }, 3000);
+      } else {
+        alert("Failed to send message.");
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    }
+  });
+}

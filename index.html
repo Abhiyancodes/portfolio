@@ -417,7 +417,7 @@
 
                 <div>
                   <span class="qualification__rounder"></span>
-                  <!-- <span class="qualification__line"></span> -->
+                  <span class="qualification__line"></span> <!-- Added line to connect to Q3 -->
                 </div>
                 <div>
                   <h3 class="qualification__title">Class 12th</h3>
@@ -442,18 +442,14 @@
                       <i class="uil uil-times services__modal-close"></i>
                       <ul class="services__modal-services grid">
                         <li class="services__modal-service">
-                          <i
-                            class="uil uil-check-circle services__moda-icon"
-                          ></i>
+                          <i class="uil uil-check-circle services__moda-icon"></i>
                           <p>
                             Subjects studied: Physics, Chemistry, Maths,
                             English, Nepali, Computer Science.
                           </p>
                         </li>
                         <li class="services__modal-service">
-                          <i
-                            class="uil uil-check-circle services__moda-icon"
-                          ></i>
+                          <i class="uil uil-check-circle services__moda-icon"></i>
                           <p>Scored 3.82 out of 4.0</p>
                         </li>
                       </ul>
@@ -461,7 +457,46 @@
                   </div>
                 </div>
               </div>
-            </div>
+
+              <!--====== Qualification 3 ======-->
+              <div class="qualification__data">
+                <div>
+                  <h3 class="qualification__title">B.Sc. CSIT</h3>
+                  <span class="qualification__subtitle">
+                    Mahendra Morang Adarsha <br />Multiple Campus
+                  </span>
+                  <div class="qualification__calender">
+                    <i class="uil uil-calendar-alt"></i>
+                    2024 - Present
+                  </div>
+                  <span class="button button--flex button--small button--link services__button">
+                    View More
+                    <i class="uil uil-arrow-right button__icon"></i>
+                  </span>
+                  <div class="services__modal">
+                    <div class="services__modal-content">
+                      <h4 class="services__modal-title">B.Sc. CSIT Summary :</h4>
+                      <i class="uil uil-times services__modal-close"></i>
+                      <ul class="services__modal-services grid">
+                        <li class="services__modal-service">
+                          <i class="uil uil-check-circle services__moda-icon"></i>
+                          <p>Currently in 4th Semester, pursuing Bachelor's in Computer Science & Information Technology.</p>
+                        </li>
+                        <li class="services__modal-service">
+                          <i class="uil uil-check-circle services__moda-icon"></i>
+                          <p>Subjects: Data Structures, Operating System, DBMS, Computer Networks, Software Engineering.</p>
+                        </li>
+                        <li class="services__modal-service">
+                          <i class="uil uil-graduation-cap services__moda-icon"></i>
+                          <p>Expected Graduation: <strong>2028</strong></p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+              </div>
+              <div>
+                  <span class="qualification__rounder"></span>
+              </div>
           </div>
         </div>
       </section>
@@ -602,13 +637,12 @@
         <div class="contact__container container grid">
           <div>
             <div class="contact__information">
-              <i class="uil uil-calling contact__icon"></i>
-
+                <i class="uil uil-calling contact__icon"></i>
               <div>
                 <h3 class="contact__title">Contact Me</h3>
-                <span class="contact__subtitle"
-                  ><a href="tel:+977-9869219321"></a>+977-9860219321</span
-                >
+                <span class="contact__subtitle">
+                  +977-9860219321
+                </span>
               </div>
             </div>
 
@@ -617,9 +651,9 @@
 
               <div>
                 <h3 class="contact__title">Email</h3>
-                <span class="contact__subtitle"
-                  >abhiiyancodes@gmail.com</span
-                >
+                <span class="contact__subtitle">
+                  abhiiyancodes@gmail.com
+                </span>
               </div>
             </div>
 
@@ -628,50 +662,71 @@
 
               <div>
                 <h3 class="contact__title">Location</h3>
-                <span class="contact__subtitle"
-                  >Ganesh Chowk, Biratnagar-4, Nepal</span
-                >
+                <span class="contact__subtitle">
+                  Ganesh Chowk, Biratnagar-4, Nepal
+                </span>
               </div>
             </div>
           </div>
 
-          <form action="" class="contact__form grid">
+          <form
+            action="https://formspree.io/f/mdavolvb"
+            method="POST"
+            class="contact__form grid"
+            id="contact-form"
+          >
             <div class="contact__inputs grid">
               <div class="contact__content">
-                <label for="" class="content__label">Name</label>
-                <input type="text" class="contact__input" />
+                <label class="content__label">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  class="contact__input"
+                  required
+                />
               </div>
 
               <div class="contact__content">
-                <label for="" class="content__label">Email</label>
-                <input type="Email" class="contact__input" />
+                <label class="content__label">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  class="contact__input"
+                  required
+                />
               </div>
             </div>
 
-            <div class="contact__content">
-              <label for="" class="content__label">Message</label>
-              <textarea
-                name=""
-                id=""
-                cols="0"
-                rows="7"
-                class="contact__input"
-              ></textarea>
-            </div>
+              <div class="contact__content">
+                <label class="content__label">Message</label>
+                <textarea
+                  name="message"
+                  cols="0"
+                  rows="7"
+                  class="contact__input"
+                  required
+                ></textarea>
+              </div>
 
-            <div>
-              <a
-                href=" mailto: abhiiyancodes@gmail.com?subject="Provide Subject" : &body="Write your message here"
-                class="button button--flex"
-              >
-                Send Message
-                <i class="uil uil-message button__icon"></i>
-              </a>
-            </div>
+              <div>
+                <button
+                  type="submit"
+                  class="button button--flex"
+                >
+                  Send Message
+                  <i class="uil uil-message button__icon"></i>
+                </button>
+              </div>
           </form>
+
         </div>
       </section>
+
     </main>
+
+    <div id="success-message" class="success-toast">
+      Message sent successfully!
+    </div>
 
     <!--================== Footer ===============-->
     <footer class="footer">
