@@ -92,6 +92,22 @@ var swiper = new Swiper(".portfolio__container", {
   },
 });
 
+const portfolioContainer = document.querySelector(".portfolio__container");
+
+portfolioContainer.addEventListener(
+  "wheel",
+  (e) => {
+    e.preventDefault();
+
+    if (e.deltaY > 0) {
+      swiper.slideNext();
+    } else {
+      swiper.slidePrev();
+    }
+  },
+  { passive: false }
+);
+
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll("section[id]");
 
