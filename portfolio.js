@@ -225,7 +225,8 @@ if (contactForm) {
 /*==================== OPEN EXTERNAL LINKS IN NEW TAB ====================*/
 document.querySelectorAll('a[href]').forEach(link => {
   if (
-    link.href.startsWith('http') &&
+    link.href.startsWith('http') && 
+    link.href.startsWith('https') &&
     !link.href.includes(window.location.hostname)
   ) {
     link.target = '_blank';
